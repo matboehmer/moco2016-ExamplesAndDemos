@@ -1,2 +1,2 @@
-# moco2016-MVCShoppingList
-This is the source code of today’s coding session on the Model-View-Controller pattern.
+# MVC Demo App
+Demo of the Android app we discussed during our MVC session. We implemented a simple shopping list application using the MVC pattern. See source code comments for some more details. Pull requests welcome ;-)
