@@ -15,9 +15,9 @@ public class ShoppingListModel {
     //
 
     private static ShoppingListModel instance;
+
     // our model is backed by a simple collection
     private final ArrayList list;
-    private OnModelChangeListener onModelChangeListener;
 
     //********
     //following lines implement functional aspects of the model
@@ -38,7 +38,6 @@ public class ShoppingListModel {
         list.add(item);
         notifyListener();
     }
-
     public void removeItem(String item) {
         list.remove(item);
         notifyListener();
@@ -47,6 +46,8 @@ public class ShoppingListModel {
     //********
     // following lines are for providing a listener interface for model changes
     //
+
+    private OnModelChangeListener onModelChangeListener;
 
     public ArrayList<String> getAllItems() {
         return list;
