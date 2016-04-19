@@ -1,2 +1,2 @@
 # moco2016-MVCShoppingList
-Demo of the Android app we discussed during our MVC session
+This is the source code of today’s coding session on the Model-View-Controller pattern.
