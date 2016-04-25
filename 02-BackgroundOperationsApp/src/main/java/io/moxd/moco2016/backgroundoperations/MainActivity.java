@@ -1,11 +1,15 @@
 package io.moxd.moco2016.backgroundoperations;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -145,5 +149,17 @@ public class MainActivity extends AppCompatActivity {
 
         // run the async task
         asyncTask.execute(param1);
+    }
+
+    /**
+     * onClick listener for button, defined in activity_main.xml
+     */
+    public void clickButtonAlarmTimer(View view) {
+        AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+
+        Intent intent = new Intent(this, AlarmActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + 15 * 1000, pendingIntent);
     }
 }

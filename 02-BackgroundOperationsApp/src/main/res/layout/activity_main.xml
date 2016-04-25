@@ -74,4 +74,19 @@
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
         android:src="@android:color/holo_blue_light"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickButtonAlarmTimer"
+        android:text="schedule timer for +15 seconds"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:src="@android:color/holo_blue_light"/>
+
+
 </LinearLayout>
