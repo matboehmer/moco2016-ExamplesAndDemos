@@ -52,10 +52,10 @@ public class MyIntentService extends IntentService {
             if (ACTION_NO1.equals(action)) {
 
                 // get input for our work from intent extras
-                String listUrl = intent.getStringExtra(EXTRA_PARAM1);
+                String param1 = intent.getStringExtra(EXTRA_PARAM1);
 
                 // invoke method for background operations
-                String result = handleActionDownloadList(listUrl);
+                String result = handleAction(param1);
 
                 // notify components interested in results of this action
                 Intent serviceRequestResult = new Intent(ACTION_NO1_RESPONSE);
@@ -71,18 +71,19 @@ public class MyIntentService extends IntentService {
      *
      * @param param1
      */
-    private String handleActionDownloadList(String param1) {
-        Log.d(TAG, "started handleActionDownloadList on thread #" + Thread.currentThread().getId());
-
-        int randomData = new Random().nextInt(1000);
+    private String handleAction(String param1) {
+        Log.d(TAG, "started handleAction on thread #" + Thread.currentThread().getId());
 
         try {
-            Thread.sleep(5000);
+            for (int i = 1; i <= 100; i++) {
+                Log.d(TAG, "MyIntentService is running" + i + "/10");
+                Thread.sleep(100);
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        Log.d(TAG, "done handleActionDownloadList on thread #" + Thread.currentThread().getId());
+        Log.d(TAG, "done handleAction on thread #" + Thread.currentThread().getId());
 
         return "Hello " + param1 + " from thread #" + Thread.currentThread().getId();
     }
