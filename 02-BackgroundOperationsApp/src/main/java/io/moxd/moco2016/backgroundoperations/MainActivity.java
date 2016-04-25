@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * Controller of a small demo on concurrency using threads and services on Android.
+ * Controller of a small demo on background operations and using threads and services on Android.
  *
  * @author Matthias Boehmer, matthias.boehmer@th-koeln.de
  */
@@ -70,19 +70,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * onClick listener for button
-     *
-     * @param v
+     * onClick listener for button, defined in activity_main.xml
      */
     public void clickButtonTestResponsiveness(View v) {
         Toast.makeText(MainActivity.this, "UI is still responsive on thread #" + Thread.currentThread().getId(), Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * onClick listener for button, defined in activity_main.xml
+     */
+    public void clickButtonRunOnUIThread(View view) {
+        try {
+            Thread.sleep(10000); // example on how not to do it
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * onClick listener for button, defined in activity_main.xml
-     *
-     * @param view
      */
     public void clickButtonFireIntentService(View view) {
         Intent serviceRequest = new Intent(this, MyIntentService.class);
@@ -93,8 +99,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * onClick listener for button, defined in activity_main.xml
-     *
-     * @param view
      */
     public void clickButtonAsyncTask(View view) {
 
