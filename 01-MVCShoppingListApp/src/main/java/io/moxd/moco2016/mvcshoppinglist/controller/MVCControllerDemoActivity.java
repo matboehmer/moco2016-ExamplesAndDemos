@@ -1,6 +1,7 @@
-package io.moxd.moco2016.mvcshoppinglist;
+package io.moxd.moco2016.mvcshoppinglist.controller;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,14 +13,15 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import io.moxd.moco2016.mvcshoppinglist.R;
 import io.moxd.moco2016.mvcshoppinglist.model.ShoppingListModel;
 
 
 /**
- * This Activity implements the controller of our little MVC demo application, the view is
- * implemented in file activity_main.xml, and the model in Class ShoppingListModel.
+ * This Activity implements the controller of our little MVC demo application, the view is implemented in file
+ * activity_main.xml, and the model in Class ShoppingListModel.
  */
-public class MainActivity extends Activity implements ShoppingListModel.OnModelChangeListener {
+public class MVCControllerDemoActivity extends Activity implements ShoppingListModel.OnModelChangeListener {
 
     private Button buttonAddItem;
     private EditText editTextNewItem;
@@ -48,6 +50,7 @@ public class MainActivity extends Activity implements ShoppingListModel.OnModelC
                 // add data to model
                 ShoppingListModel model = ShoppingListModel.getInstance();
                 model.addItem(newItem);
+
             }
         });
 
@@ -62,7 +65,6 @@ public class MainActivity extends Activity implements ShoppingListModel.OnModelC
                 model.removeItem(newItem);
             }
         });
-
 
         // register controller for model updates
         ShoppingListModel.getInstance().setOnModelChangeListener(this);
@@ -93,9 +95,8 @@ public class MainActivity extends Activity implements ShoppingListModel.OnModelC
     }
 
     /**
-     * This is just a simulation to show that the model can also be changed by somebody else than
-     * the user himself; for instance a remote service running on a server or some events which
-     * are happening.
+     * This is just a simulation to show that the model can also be changed by somebody else than the user himself; for
+     * instance a remote service running on a server or some events which are happening.
      */
     private void doServerSimulation() {
         Timer serverSimulation = new Timer();
@@ -105,6 +106,18 @@ public class MainActivity extends Activity implements ShoppingListModel.OnModelC
                 ShoppingListModel.getInstance().addItem("random" + new Random().nextInt(100));
             }
         }, 15000, 10000);
+    }
+
+
+    /**
+     * Another possibility to create a click listener, this one is registered in the layout file as onClick method of
+     * the button element.
+     *
+     * @param view
+     */
+    public void click_concurrencyDemo(View view) {
+        Intent i = new Intent(MVCControllerDemoActivity.this, ThreadsActivity.class);
+        startActivity(i);
     }
 
 }
