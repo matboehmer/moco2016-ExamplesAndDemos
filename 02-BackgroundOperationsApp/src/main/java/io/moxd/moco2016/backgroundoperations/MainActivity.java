@@ -162,4 +162,8 @@ public class MainActivity extends AppCompatActivity {
 
         alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + 15 * 1000, pendingIntent);
     }
+
+    public void clickButtonDownloadDemo(View view) {
+        startActivity(new Intent(this, DownloadDataActivity.class));
+    }
 }

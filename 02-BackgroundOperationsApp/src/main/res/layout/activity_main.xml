@@ -88,5 +88,10 @@
         android:layout_marginBottom="15dp"
         android:src="@android:color/holo_blue_light"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickButtonDownloadDemo"
+        android:text="open download demo"/>
 
 </LinearLayout>
