@@ -107,17 +107,4 @@ public class MVCControllerDemoActivity extends Activity implements ShoppingListM
             }
         }, 15000, 10000);
     }
-
-
-    /**
-     * Another possibility to create a click listener, this one is registered in the layout file as onClick method of
-     * the button element.
-     *
-     * @param view
-     */
-    public void click_concurrencyDemo(View view) {
-        Intent i = new Intent(MVCControllerDemoActivity.this, ThreadsActivity.class);
-        startActivity(i);
-    }
-
 }
