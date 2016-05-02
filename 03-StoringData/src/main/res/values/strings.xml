@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Storing Data</string>
+    <string name="saved_high_score">savedHighScore</string>
+    <string name="pref_checkbox_demo">Did you check this?</string>
+    <string name="pref_checkbox_demo_summ">Just a demo for checkbox</string>
+    <string name="pref_edittext_demo">Insert text value</string>
+    <string name="pref_edittext_demo_summ">Demo for inserting text setting</string>
+    <integer name="saved_high_score_default">1000</integer>
+    <string name="title_activity_shopping_list">ShoppingListActivity</string>
+    <string name="action_settings">Settings</string>
+</resources>

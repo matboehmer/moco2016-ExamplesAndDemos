@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".controller.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textViewLabelItem"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="Item"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <EditText
+            android:id="@+id/editTextListEntryItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textViewLabelItem"/>
+
+
+        <TextView
+            android:id="@+id/textViewLabelAmount"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextListEntryItem"
+            android:layout_toStartOf="@+id/editTextListEntryItem"
+            android:text="Amount"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <EditText
+            android:id="@+id/editTextListEntryAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextListEntryItem"
+            android:layout_gravity="center_horizontal"
+            android:layout_toRightOf="@id/textViewLabelAmount"
+            android:ems="10"
+            android:inputType="number"/>
+
+    </RelativeLayout>
+su
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonAddRandomEntry"
+        android:text="add list entry"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@android:color/holo_blue_light"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonDeleteAllEntries"
+        android:text="delete all list entries"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@android:color/holo_blue_light"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonOpenShoppingList"
+        android:text="open shopping list"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@android:color/holo_blue_light"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonOpenSettings"
+        android:text="Open settings"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Value settings checkbox:"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <TextView
+        android:id="@+id/textViewSettingsCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Value settings text:"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <TextView
+        android:id="@+id/textViewSettingsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+
+</LinearLayout>
